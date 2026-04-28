@@ -1,0 +1,77 @@
+.settings-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.settings-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: 24px;
+}
+
+.settings-card-header {
+    margin-bottom: 20px;
+}
+
+.settings-card-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.settings-card-header p {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.settings-form select,
+.settings-form input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+.settings-form input[readonly] {
+    background: var(--background);
+    color: var(--text-secondary);
+}
+
+.settings-form select:focus,
+.settings-form input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.settings-message {
+    min-height: 20px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.settings-message.success {
+    color: var(--success);
+}
+
+.settings-message.error {
+    color: var(--danger);
+}

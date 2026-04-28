@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - EduTools</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-auth-page="login">
+    <main class="auth-container">
+        <h1>EduTools</h1>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Email or username" autocomplete="username" required>
+            <input type="password" id="password" placeholder="Password" autocomplete="current-password" required>
+            <label class="remember-row">
+                <input type="checkbox" id="remember-password">
+                <span>Remember email on this device</span>
+            </label>
+            <button type="submit">Log In</button>
+        </form>
+        <div class="auth-divider"><span>or</span></div>
+        <div id="google-signin" class="google-signin"></div>
+        <p class="auth-note" id="google-signin-note"></p>
+        <p class="error" id="login-error"></p>
+    </main>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

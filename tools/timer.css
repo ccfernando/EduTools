@@ -1,0 +1,130 @@
+.tool-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.tool-container header {
+    padding: 20px;
+}
+
+.back-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.tool-container main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.tool-container h1 {
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.timer-display {
+    font-size: 80px;
+    font-weight: 300;
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Mono', monospace;
+    color: #333;
+    margin-bottom: 30px;
+    background: white;
+    padding: 30px 60px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.timer-display.warning {
+    color: #f59e0b;
+}
+
+.timer-display.danger {
+    color: #dc2626;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.timer-controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+.btn.primary {
+    background: #2563eb;
+    color: white;
+}
+
+.btn.primary:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+.btn.secondary {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.btn.secondary:hover:not(:disabled) {
+    background: #e5e5e5;
+}
+
+.btn.outline {
+    background: white;
+    border: 1px solid #e5e5e5;
+    color: #666;
+}
+
+.btn.outline:hover {
+    background: #f5f5f5;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn.small {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.timer-settings {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #666;
+    font-size: 14px;
+}
+
+.timer-settings input {
+    width: 80px;
+    padding: 8px 12px;
+    font-size: 14px;
+}

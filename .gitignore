@@ -1,0 +1,22 @@
+node_modules/
+
+# Local runtime data
+edutools.db
+*.db
+
+# Local secrets / bootstrap files
+admin-password.txt
+google-client-id.txt
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary odd files
+nul
