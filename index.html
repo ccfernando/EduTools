@@ -4,12 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EduTools Dashboard</title>
+    <script>
+      (function() {
+        try {
+          const savedTheme = localStorage.getItem('theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+        document.documentElement.classList.add('no-transitions');
+      })();
+    </script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* CRITICAL CSS: Apply theme immediately to prevent FOUC */
+      [data-theme="dark"] {
+        --background: #0f172a;
+        --surface: #1e293b;
+        --text-primary: #f1f5f9;
+        --text-secondary: #94a3b8;
+        --text-muted: #64748b;
+        --border: #334155;
+      }
+      body { background: var(--background); color: var(--text-primary); }
+      .sidebar { background: var(--surface); border-right-color: var(--border); }
+      .top-header { background: var(--surface); border-bottom-color: var(--border); }
+      .stat-card, .tool-card, .activity-list { background: var(--surface); border-color: var(--border); }
+      /* No transitions during initial load */
+      .no-transitions *, .no-transitions .sidebar, .no-transitions .main-content { transition: none !important; }
+      /* Sidebar collapsed state */
+      .sidebar.collapsed { width: 72px !important; }
+      .sidebar.collapsed .logo { display: none; }
+      .sidebar.collapsed .nav-item span, .sidebar.collapsed .user-info { display: none; }
+      .sidebar.collapsed .nav-item { justify-content: center; }
+      .sidebar.collapsed .user-profile { justify-content: center; }
+      .main-content.collapsed { margin-left: 72px; }
+    </style>
 </head>
-<style>.sidebar{transition:none}.sidebar.collapsed{width:72px}.sidebar.collapsed .logo{display:none}.sidebar.collapsed .sidebar-header{justify-content:center;padding:24px 12px}.sidebar.collapsed .main-content{margin-left:72px}</style>
 <body data-allowed-roles="admin,student">
     <div class="app-container">
         <!-- Sidebar -->
@@ -294,6 +328,18 @@
                 </div>
             </section>
         </main>
+        <script>
+          (function() {
+            try {
+              if (localStorage.getItem('sidebarCollapsed') === 'true') {
+                var s = document.querySelector('.sidebar');
+                var m = document.querySelector('.main-content');
+                if (s) s.classList.add('collapsed');
+                if (m) m.classList.add('collapsed');
+              }
+            } catch (e) {}
+          })();
+        </script>
     </div>
 
     <script src="js/auth.js"></script>
