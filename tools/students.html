@@ -106,10 +106,6 @@
 
         <main class="main-content">
             <header class="top-header">
-                <div class="header-left">
-                    <h1 class="page-title">Students</h1>
-                    <p class="page-subtitle">Manage students by section and batch</p>
-                </div>
                 <div class="header-actions">
                     <button class="action-btn" id="dark-mode-toggle" title="Toggle dark mode">
                         <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -136,6 +132,11 @@
                     </button>
                 </div>
             </header>
+
+            <div class="page-header">
+                <h1 class="page-title">Students</h1>
+                <p class="page-subtitle">Manage students by section and batch</p>
+            </div>
 
             <div class="tool-content">
                 <div class="students-filters">
@@ -236,7 +237,7 @@
     </div>
 
     <script src="../js/auth.js"></script>
-    <script src="../js/theme.js"></script>
+    <script type="module" src="../js/theme.js"></script>
     <script src="students.js"></script>
 </body>
 </html>

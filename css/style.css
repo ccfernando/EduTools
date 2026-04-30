@@ -274,27 +274,46 @@ body {
 }
 
 .top-header {
-    background: var(--surface);
+    background: var(--background);
     border-bottom: 1px solid var(--border);
-    padding: 24px 32px;
+    padding: 16px 32px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 16px;
     position: sticky;
     top: 0;
     z-index: 50;
 }
 
-.page-title {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 4px;
+.header-actions {
+    display: flex;
+    gap: 12px;
+    align-self: flex-end;
 }
 
-.page-subtitle {
+.section-header p {
     font-size: 14px;
     color: var(--text-secondary);
+}
+
+.page-header .page-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 4px 0;
+}
+
+.page-header .page-subtitle {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 .header-actions {
@@ -448,6 +467,37 @@ body {
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 4px;
+}
+
+.section-header p {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.page-header {
+    background: var(--surface);
+    padding: 20px 32px;
+    border-bottom: 1px solid var(--border);
+}
+
+.page-header .page-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 4px 0;
+}
+
+.page-header .page-subtitle {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 .section-header p {
