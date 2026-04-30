@@ -274,7 +274,7 @@ body {
 }
 
 .top-header {
-    background: var(--background);
+    background: var(--surface);
     border-bottom: 1px solid var(--border);
     padding: 22px 32px;
     display: flex;
