@@ -279,6 +279,7 @@ body {
     padding: 22px 32px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 16px;
     position: sticky;
     top: 0;
